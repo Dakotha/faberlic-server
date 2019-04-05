@@ -1,0 +1,6 @@
+{
+    "database": {
+        "host": "YOUR HOST",
+        "dbname": "YOUR DATABASE NAME"
+    }
+}

@@ -1,14 +1,13 @@
 const express = require('express')
 
-const Quote = require('./models/quote.js')
+const Quote = require('../models/quote')
 
 const router = express.Router()
 
 router.post('/quote', async (req, res) => {
     try {
-        // console.log(req.body)
         const quote = await Quote.create(req.body)
-        res.send(quote)
+        res.send(req.body)
     } catch (e) {
         res.status(401).send(e)
     }

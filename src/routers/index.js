@@ -1,9 +1,9 @@
 const express = require('express')
 
+const quotesController = require('../controllers/quote')
+
 const router = express.Router()
 
-router.get('/', (req, res) => {
-    res.send('Strona: api.faberlic.ostroleka.pl')
-})
+router.get('/', quotesController.getAllQuotes)
 
 module.exports = router

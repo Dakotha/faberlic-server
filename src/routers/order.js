@@ -1,13 +1,15 @@
 const express = require('express')
 
+const Order = require('../models/order')
+
 const router = express.Router()
 
-router.post('/order', async (req, res) => {
-    try {
-        res.send(req.body)
-    } catch {
-        res.status(401).send()
-    }
+router.post('/order', (req, res) => {
+    Order.create(req.body).then((res) => {
+        console.log(res)
+    }).catch((e) => {
+        console.log(e)
+    })
 })
 
 module.exports = router

@@ -5,10 +5,10 @@ const Order = require('../models/order')
 const router = express.Router()
 
 router.post('/order', (req, res) => {
-    Order.create(req.body).then((res) => {
-        console.log(res)
+    Order.create(req.body).then(() => {
+        res.send(req.body)
     }).catch((e) => {
-        console.log(e)
+        res.status(400).send(false)
     })
 })
 

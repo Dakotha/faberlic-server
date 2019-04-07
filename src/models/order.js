@@ -1,24 +1,41 @@
 const mongoose = require('mongoose')
+const validator = require('validator')
 
 const orderShema = new mongoose.Schema({
     name: {
-        type: String
+        type: String,
+        required: true
     },
     email: {
-        type: String
+        type: String,
+        required: true,
+        validate(value) {
+            if (!validator.isEmail(value)) throw new Error('Podałaś niewłaściwy adres email.')
+        }
+    },
+    phone: {
+        type: Number,
+        required: true,
+        validate(value) {
+            if (!validator.isNumeric(value)) throw new Error('Podałaś niewłaściwy numer telefonu.')
+        }
     },
     address: {
-        type: String
+        type: String,
+        required: true
     },
     products: {
         productName: {
-            type: String
+            type: String,
+            required: true
         },
         productId: {
-            type: String
+            type: String,
+            required: true
         },
         productQuantity: {
-            type: String
+            type: Number,
+            required: true
         }
     }
 })

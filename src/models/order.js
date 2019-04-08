@@ -1,16 +1,14 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
-const uniqid = require('uniqid')
 
 const orderShema = new mongoose.Schema({
     orderNumber: {
         type: String,
-        required: true,
-        default: uniqid.time()
+        required: true
     },
     name: {
         type: String,
-        required: true
+        required: [ true, 'Proszę podaj swoje imię i nazwisko.' ]
     },
     email: {
         type: String,
@@ -27,7 +25,7 @@ const orderShema = new mongoose.Schema({
         type: String,
         required: true
     },
-    products: {
+    products: [{
         productName: {
             type: String,
             required: true
@@ -40,7 +38,7 @@ const orderShema = new mongoose.Schema({
             type: Number,
             required: true
         }
-    }
+    }]
 })
 
 const Order = new mongoose.model('Order', orderShema)

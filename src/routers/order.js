@@ -6,9 +6,10 @@ const router = new express.Router()
 
 router.post('/order', (req, res) => {
     Order.create(req.body).then((response) => {
-        res.send(`Response: ${response.orderNumber}`)
+        res.send(response.orderNumber)
     }).catch((err) => {
-        res.status(400).send(`Problem: ${err}`)
+        res.status(400).send(`Problem(S): ${err}`)
+        // res.send(err.errors.name.message)
     })
 })
 

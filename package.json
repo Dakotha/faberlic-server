@@ -11,14 +11,13 @@
   "license": "",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "hbs": "^4.0.3",
     "mongoose": "^5.4.22",
-    "uniqid": "^5.0.3",
     "validator": "^10.11.0"
   },
   "devDependencies": {
-    "cors": "^2.8.5",
     "nodemon": "^1.18.10"
   }
 }

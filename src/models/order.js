@@ -1,7 +1,13 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
+const uniqid = require('uniqid')
 
 const orderShema = new mongoose.Schema({
+    orderNumber: {
+        type: String,
+        required: true,
+        default: uniqid.time()
+    },
     name: {
         type: String,
         required: true
@@ -10,15 +16,12 @@ const orderShema = new mongoose.Schema({
         type: String,
         required: true,
         validate(value) {
-            if (!validator.isEmail(value)) throw new Error('Podałaś niewłaściwy adres email.')
+            if (!validator.isEmail(value)) throw new Error()
         }
     },
     phone: {
         type: Number,
         required: true,
-        validate(value) {
-            if (!validator.isNumeric(value)) throw new Error('Podałaś niewłaściwy numer telefonu.')
-        }
     },
     address: {
         type: String,

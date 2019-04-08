@@ -6,7 +6,7 @@ const newsletterShcema = new monogoose.Schema({
         type: String,
         required: true,
         validate(value) {
-            if (!validator.isEmail(value)) throw new Error('Podałaś niewłaściwy adres email.')
+            if (!validator.isEmail(value)) throw new Error()
         }
     }
 })

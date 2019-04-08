@@ -12,4 +12,12 @@ router.post('/order', (req, res) => {
     })
 })
 
+router.get('/order', (req, res) => {
+    Order.find({}).then((response) => {
+        res.send(response)
+    }).catch((err) => {
+        res.send(err)
+    })
+})
+
 module.exports = router

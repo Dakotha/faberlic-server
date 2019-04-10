@@ -36,7 +36,7 @@ var corsOptions = {
 }
 
 // Then pass them to cors:
-app.use(cors(corsOptions));
+app.use(cors('*'));
 
 app.use(indexRouter)
 app.use(orderRouter)

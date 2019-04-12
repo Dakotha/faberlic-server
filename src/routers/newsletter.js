@@ -6,9 +6,10 @@ const router = new express.Router()
 
 router.post('/newsletter', (req, res) => {
     Newsletter.create(req.body).then((response) => {
-        res.send(`Response: ${response.email}`)
+        res.send({ status: 'OK' })
     }).catch((err) => {
-        res.status(400).send(`Problem: ${err}`)
+        res.status(400).send({ error: err.name })
+        // TODO: Store full error in log file
     })
 })
 

@@ -1,13 +1,13 @@
 const path = require('path')
 
 const express = require('express')
-const bodyParser = require('body-parser')
 const cors = require('cors')
 
 require('./database/init')
 const indexRouter = require('./routers/index')
 const orderRouter = require('./routers/order')
 const newsletterRouter = require('./routers/newsletter')
+const userRouter = require('./routers/user')
 
 const app = express()
 
@@ -15,7 +15,6 @@ const port = process.env.port || 3000
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(path.join(__dirname, '..', 'public')))
-app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(express.json())
 
@@ -41,6 +40,7 @@ app.use(cors('*'));
 app.use(indexRouter)
 app.use(orderRouter)
 app.use(newsletterRouter)
+app.use(userRouter)
 app.use('*', (req, res) => res.status(404).render('404'))
 
 app.listen(port, () => console.log('Server is running on port', port))

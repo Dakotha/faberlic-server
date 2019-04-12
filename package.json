@@ -1,0 +1,23 @@
+{
+  "name": "faberlic-server",
+  "version": "1.0.0",
+  "description": "Serwer (API) aplikacji wspomagającej proces zamawiania produktów u konsultantki Faberlic.",
+  "main": "index.js",
+  "author": "Robert Bednarowicz",
+  "license": "It's all yours",
+  "scripts": {
+    "dev": "nodemon ./src/index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.5",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "hbs": "^4.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.4.22",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

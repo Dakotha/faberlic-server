@@ -6,6 +6,10 @@ const orderShema = new mongoose.Schema({
         type: String,
         required: true
     },
+    registeredAt: {
+        type: Date,
+        default: new Date()
+    },
     name: {
         type: String,
         required: true

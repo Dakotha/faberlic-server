@@ -2,5 +2,12 @@
     "database": {
         "host": "YOUR HOST",
         "dbname": "YOUR DATABASE NAME"
+    },
+    "sgMail": {
+        "APIKey": "YOUR SENDGRID API KEY",
+        "emailAddress": "YOUR EMAIL ADDRESS"
+    },
+    "jwt": {
+        "secretKey": "YOUR SECRET KEY FOR JSONWEBTOKEN"
     }
 }

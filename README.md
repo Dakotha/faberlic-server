@@ -5,7 +5,7 @@ Serwer aplikacji wspomagającej proces zamawiania produktów u konsultantki Fabe
 ```
 npm install
 ```
-You need to rename config.json.example file to config.json and edit it. Just provide your mongo database host and database name.
+You need to rename config.json.example file to config.json and edit it. Just provide your own data.
 
 ### Compiles and hot-reloads for development
 ```

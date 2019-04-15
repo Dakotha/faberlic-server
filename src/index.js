@@ -20,8 +20,7 @@ app.use(express.json())
 
 // Set up a whitelist and check against it:
 var whitelist = [
-    'http://faberlic.ostroleka.pl',
-    'http://localhost:8080'
+    'http://faberlic.ostroleka.pl'
 ]
 
 var corsOptions = {
@@ -35,7 +34,7 @@ var corsOptions = {
 }
 
 // Then pass them to cors:
-app.use(cors('*'));
+app.use(cors(whitelist));
 
 app.use(indexRouter)
 app.use(orderRouter)
